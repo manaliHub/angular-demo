@@ -1,0 +1,23 @@
+.button-row {
+  display: table-cell;
+  padding: 2px;
+}
+
+.post {
+  border: 2px outset white;
+  background-color: lightblue;
+  text-align: center;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.mat-raised-button:hover {
+  background-color: yellow;
+}
