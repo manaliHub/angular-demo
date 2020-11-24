@@ -1,6 +1,12 @@
 .button-row {
   display: table-cell;
-  padding: 2px;
+  margin: 8px 2px 40px 0;
+}
+
+.button-single {
+  display: table-cell;
+  margin: 8px 2px 40px 0;
+  border: 1px solid black;
 }
 
 .post {
@@ -20,4 +26,10 @@
 
 .mat-raised-button:hover {
   background-color: yellow;
+}
+
+.button-load {
+  display: table-cell;
+  margin: 30px 2px 40px 700px;
+  border: 1px solid black;
 }

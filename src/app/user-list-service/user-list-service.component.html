@@ -1,11 +1,11 @@
 <h4>Please select a user to find their comments:</h4>
 
 <div *ngFor="let user of users" class="button-row">
-	<button type="button" mat-raised-button color="primary" class="button-row" (click)="showUserPosts(user.id)">{{user.name | slice:0:(user.name).indexOf(' ')}}</button>
+	<button type="button" mat-raised-button color="primary" class="button-single" (click)="showUserPosts(user.id)">{{user.name | slice:0:(user.name).indexOf(' ')}}</button>
 </div>
 
 <div *ngIf="posts">
-	<div>Posts from User : {{postsForUser}}</div>
+	<h4>Posts from User : {{postsForUser}}</h4>
 </div>
 
 <mat-list role="list">
@@ -47,8 +47,9 @@
 			</div>
 		</div>
 	</div>
-	<button type="button" mat-raised-button color="primary" class="button-row" (click)="showUserAllPosts()">..Load All</button>
+	<button type="button" mat-raised-button color="primary" class="button-load" (click)="showUserAllPosts()">..Load All</button>
 </mat-list>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
