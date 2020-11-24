@@ -10,11 +10,18 @@
 }
 
 .post {
-  border: 2px outset white;
+  border: 1px outset black;
   background-color: lightblue;
   text-align: center;
+  padding: 8px;
+}
+.showComment {
+  padding: 10px;
 }
 
+.postSingle {
+  margin: 8px 2px 40px 0;
+}
 .example-card {
   max-width: 400px;
 }

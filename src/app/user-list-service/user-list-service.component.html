@@ -11,13 +11,13 @@
 <mat-list role="list">
 	<div *ngIf="posts">
 		<div *ngFor="let post of posts | slice:0:show; let i=index">
-			<mat-list-item>
+			<mat-list-item class="postSingle">
 				<div class="post">
 					<div>Title: {{post.title}}</div>
 					<div>Body: {{post.body}}</div>
 				</div>
 
-				<div>
+				<div class="showComment">
 					<button mat-mini-fab (click)="showPostComments(post.id, i)">
             <mat-icon>add</mat-icon>
           </button>
