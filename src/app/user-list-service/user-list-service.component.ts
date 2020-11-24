@@ -45,6 +45,7 @@ export class UserListServiceComponent implements OnInit {
   posts: Posts[];
   comments: Comments[];
   filteredComments: any;
+  showComments: boolean[];
   show = 3;
   // TODO - Add loader to show server behaviour.
   private loading: boolean = false;
@@ -60,19 +61,42 @@ export class UserListServiceComponent implements OnInit {
     window.alert("The service has been shared!");
   }*/
 
+  /*showUserPosts(id: number) {
+    this.service.getPosts(id).subscribe(data => {
+      this.posts = data;
+      this.loading = false;
+      
+    });
+    this.filteredComments = null;
+  }*/
+
   showUserPosts(id: number) {
     this.service.getPosts(id).subscribe(data => {
       this.posts = data;
       this.loading = false;
+      this.showComments = this.posts.map(p => false);
     });
+
     this.filteredComments = null;
+    console.log(this.showComments);
   }
 
-  showPostComments(postId: number) {
+  /* showPostComments(postId: number) {
     this.service.getComments(postId).subscribe(data => {
       this.comments = data;
     });
+  }*/
+
+  showPostComments(postId: number, index: number) {
+    this.service.getComments(postId).subscribe(data => {
+      this.comments = data;
+    });
+    if( this.showComments[index] == true)
+    this.showComments[index] = false;
+    else
+    this.showComments[index] = true;
   }
+
   showAllPosts() {}
 }
 

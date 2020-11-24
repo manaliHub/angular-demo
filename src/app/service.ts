@@ -24,6 +24,7 @@ export class Service {
     );
   }
   getPosts(id: number): Observable<Posts[]> {
+    
     return this.http.get(this.baseURL + "posts?userId=" + id).pipe(
       map((data: Posts[]) => {
         return data;
