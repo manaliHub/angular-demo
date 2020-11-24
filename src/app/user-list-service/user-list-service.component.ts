@@ -18,6 +18,7 @@ export class UserListServiceComponent implements OnInit {
   filteredComments: any;
   showComments: boolean[];
   selectedUser: number;
+  postsForUser: String;
   show = 3;
   // TODO - Add loader to show server behaviour.
   private loading: boolean = false;
@@ -25,7 +26,7 @@ export class UserListServiceComponent implements OnInit {
 
   ngOnInit() {
     this.service.getUsers().subscribe(data => {
-      this.users = data;      
+      this.users = data;
       this.loading = false;
     });
   }
@@ -36,6 +37,9 @@ export class UserListServiceComponent implements OnInit {
       this.showComments = this.posts.map(p => false);
       this.show = 3;
       this.selectedUser = id;
+
+      //to display user name above all posts
+      this.postsForUser = this.users.find(c => c.id == id).name;
     });
 
     this.filteredComments = null;
@@ -56,7 +60,6 @@ export class UserListServiceComponent implements OnInit {
       this.loading = false;
       this.showComments = this.posts.map(p => false);
       this.show = data.length;
-
     });
 
     this.filteredComments = null;

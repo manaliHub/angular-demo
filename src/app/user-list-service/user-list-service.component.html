@@ -1,8 +1,11 @@
 <h4>Please select a user to find their comments:</h4>
 
-
 <div *ngFor="let user of users" class="button-row">
-	<button type="button" mat-raised-button color="primary" class="button-row" (click)="showUserPosts(user.id)">{{user.username}}</button>
+	<button type="button" mat-raised-button color="primary" class="button-row" (click)="showUserPosts(user.id)">{{user.name | slice:0:(user.name).indexOf(' ')}}</button>
+</div>
+
+<div *ngIf="posts">
+	<div>Posts from User : {{postsForUser}}</div>
 </div>
 
 <mat-list role="list">
